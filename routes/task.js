@@ -84,6 +84,11 @@ router.patch("/change-status/:id/:done", function (req, res) {
 
   let taskId = req.params.id;
   let done = req.params.done;
+  if (done == "true") {
+    done = true
+  } else {
+    done = false
+  }
 
   let toUpdate = {
     done,
